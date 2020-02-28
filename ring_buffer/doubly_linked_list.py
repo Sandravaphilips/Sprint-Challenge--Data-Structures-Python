@@ -84,6 +84,10 @@ class DoublyLinkedList:
             self.tail.next = new_node
             self.tail = new_node
 
+    def insert_after(self, node, item):
+        self.length += 1
+        node.insert_after(item)
+
     """Removes the List's current tail node, making the 
     current tail's previous node the new tail of the List.
     Returns the value of the removed Node."""
