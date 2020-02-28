@@ -10,13 +10,27 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = []  # Return the list of duplicates in this data structure
+duplicates = [x for x in names_1 if x in names_2]  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+# res = filter(lambda x: x in names_1, names_2)
+# duplicates = list(res)
+
+# index = 0
+# while index < 10000:
+#     if names_1[index] in names_2:
+#         duplicates.append(names_1[index])
+#     index += 1
+
+# for name in names_1:
+#     if name in names_2:
+#         duplicates.append(name)
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
