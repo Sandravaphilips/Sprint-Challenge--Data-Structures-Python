@@ -28,6 +28,10 @@ class RingBuffer:
         list_buffer_contents = []
 
         # TODO: Your code here
+        current = self.storage.head
+        while current:
+            list_buffer_contents.append(current.value)
+            current = current.next
 
         return list_buffer_contents
 
